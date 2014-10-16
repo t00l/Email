@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<%= render :partial => "layouts/head" %>
+</head>
+
+<body>
+ 
+<!-- Contenerdor-->
+<div class ="container">
+	<!-- Cabecera-->
+	<%= render :partial => "layouts/cabecera" %>
+	<!--  Fin cabecera-->
+
+	<!--  Intro-->
+	<% if hay_imagen? %> 
+		<%= yield :imagen %>
+	<% else %>
+		<%= render :partial => "layouts/intro" %>
+	<%end%>
+	<!-- Fin intro-->
+
+ 	<!-- Servicios destacados-->
+ 	<%= render :partial => "layouts/servicios_destacados" %>
+	<!-- Fin Servicios destacados-->
+
+	<!-- Contenido plantilla-->
+	<%= render :partial=>"layouts/contenido" %>
+	<!-- Fin contenido plantilla-->
+
+</div>
+<!-- Fin del contenedor-->
+
+<% if  flash.now[:noticia] %>
+	<div class="row">
+		<div class="span10 offset2 alert alert-warning alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span></button>
+		<%= flash.now[:noticia] %>
+		</div>
+	</div>
+<%end%>
+
+</body>
+</html>

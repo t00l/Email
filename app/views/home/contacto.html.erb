@@ -1,0 +1,20 @@
+<h2><%=@titulo%></h2>
+
+<%= form_tag("") do %>	
+
+	<%= label_tag "nombre","Nombre" %>
+	<%= text_field_tag "nombre" %>
+
+	<%= label_tag "email","Email" %>
+	<%= email_field_tag "email" %>
+
+	<%= label_tag "asunto","Asunto" %>
+	<%= text_field_tag "asunto" %>
+
+	<%= label_tag "mensaje","Mensaje" %>
+	<%= text_area_tag "mensaje", nil, size: "25x10" %>
+
+	<%= submit_tag "Enviar" %>
+
+<%end%>
+
